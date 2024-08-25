@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-vue-sample1.helloWorld",
-        "title": "Hello World"
+        "command": "vscode-vue-sample1.openVueApp",
+        "title": "Open Vue App"
       }
     ]
   },
