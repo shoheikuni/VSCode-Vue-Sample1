@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { getNonce } from "./getNonce";
+//import { getNonce } from "./getNonce";
 
 export class WebAppPanel {
 
@@ -113,7 +113,7 @@ export class WebAppPanel {
                     "js/chunk-vendors.js")
             );
 
-            const nonce = getNonce();  
+            //const nonce = getNonce();  
             const baseUri = webview.asWebviewUri(vscode.Uri.joinPath(
                 this._extensionUri, 'dist-web')
                 ).toString().replace('%22', '');
@@ -132,10 +132,14 @@ export class WebAppPanel {
                 <body>
                 <input hidden data-uri="${baseUri}">
                     <div id="app"></div>  
-                    <script type="text/javascript"
-                        src="${scriptVendorUri}" nonce="${nonce}"></script>  
-                    <script type="text/javascript"
-                        src="${scriptUri}" nonce="${nonce}"></script>
+                    <script type="text/javascript"`
+                        //src="${scriptVendorUri}" nonce="${nonce}"></script>  
+                        +
+                        `src="${scriptVendorUri}"></script>  
+                    <script type="text/javascript"`
+                        //src="${scriptUri}" nonce="${nonce}"></script>
+                        +
+                        `src="${scriptUri}"></script>
                 </body>
                 </html> 
             `;  
