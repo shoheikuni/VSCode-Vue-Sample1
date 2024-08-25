@@ -1,4 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import { ExtractBaseUri } from './mixins/ExtractBaseUri';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.mixin(ExtractBaseUri);
+app.mount('#app');
+
+
