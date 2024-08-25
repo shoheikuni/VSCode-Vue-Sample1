@@ -6,12 +6,12 @@ module.exports = {
     chainWebpack: config => {
         config.plugin('copy')
             .tap(([pathConfigs]) => {
-                const to = pathConfigs[0].to
+                const to = pathConfigs.patterns[0].to
                 // so the original `/public` folder keeps priority
-                pathConfigs[0].force = true
+                pathConfigs.patterns[0].force = true
 
                 // add other locations.
-                pathConfigs.unshift({
+                pathConfigs.patterns.unshift({
                     from: 'img',
                     to: `${to}/img`,
                 })
